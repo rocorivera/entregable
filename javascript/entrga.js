@@ -69,7 +69,7 @@ function printcar(db){
     for (const product in db.car) {
         const{quantity,price,name,image,id,amount}=db.car[product];
         html+=`
-        <div class="car_compra">
+        <div class="car_compras">
             <div class'car_compra_image'>
               <img  src="${image}" alt="imagen de   producto"/>
             </div>
@@ -77,13 +77,13 @@ function printcar(db){
                 <div class='car_compra_description'>
                   <h3>${name} </h3>
                   <h4>precio:$${price}</h4>
-                  <p>stock:${quantity}<p>
+                  <p>stock:${quantity}</p>
                 </div>
-                <div class='info_total_car'>
-                <b>-</b>
-                <spam>${amount}</spam>
-                <b>+</b>
-                <img class='trash'src="/material_carrito/img/basurero.png" alt="trash">'
+                <div class='cantidad_car'id=${id}>
+                <b class='less'>-</b>
+                <spam >${amount}</spam>
+                <b class='plus'>+</b>
+                <img class='trash'src="/material_carrito/img/basurero.png" alt="trash">
             </div>
         </div>
         `;
@@ -103,6 +103,40 @@ async function main() {
     addcar(db);
     //imprimir carrito
     printproducts(db);
+const car_compra=document.querySelector('.car_compra');
+car_compra.addEventListener('click', function(event){
+    if (event.target.classList.contains('plus')){
+        const id=Number(event.target.parentElement.id);
+        const productFind=db.products.find(function(product){
+            return product.id===id;
+        });
+        if(db.car[productFind.id]){
+          if(productFind.quantity===db.car[productFind.id].amount){
+            return alert('no tenemos mas productos disponibles')
+          }  
+        }
+        db.car[id].amount++;
+        console.log(db.car)
+    };
+    if (event.target.classList.contains('less')){
+        const id=Number(event.target.parentElement.id);
+       if(db.car[id].amount===1){
+        return alert('no vas a comprar nada?')
+    }else{
+        db.car[id].amount--;
+    }
+    }
+    if (event.target.classList.contains('trash')){
+        const id=Number(event.target.parentElement.id);
+        const response=confirm('estas seguro que lo quieres borrar este producto?')
+        if(!response){
+            return;
+        }
+        delete db.car[id];
+    }
+    printcar(db)
+})
+    console.log
 
     
     

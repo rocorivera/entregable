@@ -67,6 +67,8 @@
     background-color:rgb(252, 75, 75);
     height: 20%;
     border: solid 1px black;
+    
+    
 }
 .car_logo{
     background-color: rgb(253, 66, 66);
@@ -150,13 +152,34 @@ img{
     background-color:  rgb(253, 66, 66);
     cursor: pointer;
 }
-
-.info_total_car{
-    background-color: rgb(253, 66, 66);
+.car_compra{
     display: flex;
+}
+.car_compras{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 5px;
+    margin: 5px;
+    border-radius:5px ;
+    flex-wrap: wrap;
     align-items: center;
+    width: 200px;
+    gap: 15px;
+}
+.car_compra_description{
+    display: flex;
+    margin: 5px;
+    padding: 5px;
+    flex-direction: column;
     justify-content: space-between;
-    width: auto;
+    align-items: center;
+}
+.cantidad_car{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: solid 1px white;
+    background-color: rgb(253,66,66);
 }
 .trash{
     width: 25px;
