@@ -1,27 +1,38 @@
+*,
+*::before,
+*::after{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+  
 .car{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+    background-color: rgb(253, 66, 66);
+     position: sticky;
+     top:0;
+     left: 0;
+     right: 0;
 
 }
 .car_img{
-    position:static;
     flex-wrap: wrap;
     display: flex;
-    width: 70%;
-    height: 40px;
-    margin-top:5px
+    width: 10%;
+    height: 10px;
+    
    
 }
 .car_log{
-    margin-top: 15px;
-    margin-left:0;
+   margin-left:0;
     cursor: pointer; 
     z-index: 2;
-    width: 30%;
+    width: 10%;
     height: 40px;
-    position: static;
+   
     justify-content: center;
     display: flex;
     
@@ -30,8 +41,8 @@
 }
 .menu_car.active{
     background-color:rgba(0, 0, 0, 0.411); 
-    position:fixed;
-    top: 0;
+    position: fixed;
+    top: 40px;
     right:0;
     width: 100%;
     height:100vh;
@@ -53,15 +64,14 @@
     
 }
 .car_total{
-    background-color:rgb(253, 66, 66);
+    background-color:rgb(252, 75, 75);
     height: 20%;
     border: solid 1px black;
 }
 .car_logo{
     background-color: rgb(253, 66, 66);
-    margin-top: 40px;
     width: 100%;
-    height: 200px;
+    height: 100px;
     display: flex; 
     justify-content: center;
     margin-bottom: 40px;
@@ -70,40 +80,84 @@
 }
 body{
     background-color: whitesmoke;
-   
+   margin: 0 auto;
+   overflow-x: hidden;
+   max-width:1200px ;
 }
-
+.car_init{
+    background-color: rgba(247, 242, 242, 0.479);
+}
 img{
-    width: 30%;
+    max-width: 100%;
 }
-.seccion{
+.section{
+    display: flex;
+    flex-wrap: wrap;
+    width: auto;
+    height: auto;
     justify-content: center;
-    justify-items:center ;
 }
  
-.product{
-    justify-content: center;
+.products{
+    justify-content: space-evenly;
     display:flex;
+    align-items: center;
     flex-wrap:wrap;
-    flex-direction: row;
-    margin: 5%;
-    border: solid 1px black;
-    width: 300px;
-    height: auto;
+    gap: 10px;
+   }
+.product{
+    width: 150px;
+    border: solid 1px  rgb(253, 66, 66);
+    height: 350px;
+    gap: 10px;
 }
 .cam_img{
+    height: auto;
+    width: auto;
   display: flex;
   justify-content: center;
-  height: 100%; 
-  box-shadow: 4px 4px 4px 4px; 
-  width: auto; 
+   
 } 
 .product_description{
     justify-content: center;
     justify-items: center;
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    height: 200px;
+    font-size: medium;
+
 }
 .name{
     justify-self: center;
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    display: flex;
+}
+.cash{
+    font-size: 15px;
+    justify-content: center;
+    flex-direction: center;
+    display: flex;
+}
+.cant{
+    display: flex;
+    justify-content: center;
+}
+.compra{
+   margin-left: 18px;
+    width: 100px;
+    height: 50px;
+    border: 1px solid whitesmoke;
+    border-radius: 10%;
+    background-color:  rgb(253, 66, 66);
+    cursor: pointer;
+}
+
+.info_total_car{
+    background-color: rgb(253, 66, 66);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: auto;
+}
+.trash{
+    width: 25px;
 }
